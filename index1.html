@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ushm Ecommerce Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f1f1f, #333);
+            padding: 50px;
+        }
+
+        header h1 {
+            font-size: 40px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #222;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: gold;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #cart {
+            margin: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ushm Essence</h1>
+        <p>Luxury Fragrance & Gifting Experience</p>
+    </header>
+
+    <section class="products">
+        <div class="card">
+            <h2>Nirvana Candle</h2>
+            <p>₹499</p>
+            <button onclick="addToCart('Nirvana Candle',499)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>Royal Oud Perfume</h2>
+            <p>₹899</p>
+            <button onclick="addToCart('Royal Oud Perfume',899)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>Gift Hamper</h2>
+            <p>₹1299</p>
+            <button onclick="addToCart('Gift Hamper',1299)">
+                Add to Cart
+            </button>
+        </div>
+    </section>
+
+    <div id="cart">
+        <h3>Items in Cart: <span id="itemCount">0</span></h3>
+        <h3>Total Price: ₹<span id="totalPrice">0</span></h3>
+    </div>
+
+    <script>
+        let cartCount = 0;
+        let totalPrice = 0;
+
+        function addToCart(productName, price) {
+            cartCount++;
+            totalPrice += price;
+
+            document.getElementById("itemCount").innerText = cartCount;
+            document.getElementById("totalPrice").innerText = totalPrice;
+
+            alert(productName + " added to cart successfully!");
+        }
+    </script>
+
+</body>
+</html>
